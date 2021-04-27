@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Кабачок</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/custom-select.css"/>
+
+
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100%; position: relative">
+
+
+<header style="position: relative;">
+    <div class="container-xl container-md container-sm container" style="height: 90px; ">
+        <div id="cookies"></div>
+        <nav class="navbar navbar-light navbar-expand-lg navbar-expand-md flex-grow-0 px-0 justify-content-between"><a
+                class="navbar-brand" href="/" style="max-width: 179px"><img src="./img/logo.png" alt="Catering logo"
+                                                                            style="width: 100%;"></a>
+
+            <button class="navbar-toggler pr-0 d-block d-md-none d-lg-none button-burger-for-click button-burger "
+                    type="button"
+                    onclick="$('.modal-burger').toggleClass('modal-burger-toggle'); $('.button-burger-for-click').toggleClass('button-burger')"
+                    style="border: none; outline: none;"></button>
+            <div class="col-lg-7 col-md-7 p-0 d-none d-md-flex d-lg-flex justify-content-center align-items-center">
+                <ul class="navbar-nav nav d-flex flex-grow-1 flex-row">
+                    <li class="nav-item ml-3 dropdown">
+                        <div class="nav-link text-main-color-dark px-0 navbar-size-14 dropdown-toggle"
+                             id="dropdown-userprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                             style="color: #232323; cursor: pointer">
+                            <img src="/img/profile-icon.svg" alt="" class="px-2"/>
+                            &#x42F;&#x440;&#x43E;&#x441;&#x43B;&#x430;&#x432; &#x422;&#x435;&#x441;&#x442;
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownUserMenuLink"
+                             id="dropdown-userprofile">
+                            <a class="dropdown-item" href="/Account/Update">M&#x43E;&#x457;
+                                &#x434;&#x430;&#x43D;&#x456;</a>
+                            <a class="dropdown-item" href="/Account/AddBalance">&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438;
+                                &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;</a>
+                            <a id="changechield" class="dropdown-item" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                                &#x434;&#x438;&#x442;&#x438;&#x43D;&#x443;</a>
+
+                            <a id="selectcompany" class="dropdown-item"
+                               data-userid="ec2c47b3-df91-4c14-abd6-303d63745ab4" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                                &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x456;&#x44E;</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link text-main-color-dark px-0 navbar-size-14"
+                           style="color: #232323; cursor: pointer; font-size: 14px;" href="/MyOrders">
+                            <img src="/img/basket-icon.svg" alt="" class="px-2"/>&#x41C;&#x43E;&#x457; &#x437;&#x430;&#x43C;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a id="logoutLink" class="nav-link text-main-color-dark px-0 navbar-size-14"
+                           style="color: #232323; cursor: pointer; font-size: 14px;" href="/Account/LogOut">
+                            <img src="/img/logout-icon.svg" alt="" class="px-2">&#x412;&#x438;&#x439;&#x442;&#x438;
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="modal-burger">
+
+    <div class="container d-flex flex-column flex-grow-1">
+        <nav class="navbar navbar-light navbar-expand-lg flex-grow-0 px-0"><a class="navbar-brand" href="/"
+                                                                              style="max-width: 179px">
+            <img src="./img/logo.png" alt="Catering logo" style="width: 100%;">
+        </a>
+            <button class="navbar-toggler pr-0 button-burger-for-click button-burger " type="button"
+                    onclick="$('.modal-burger').toggleClass('modal-burger-toggle'); $('.button-burger-for-click').toggleClass('button-burger')"
+                    style="border: none; outline: none;"></button>
+        </nav>
+        <div class="col-12 p-0 d-flex">
+            <ul class="navbar-nav nav">
+                <li class="nav-item ml-3 dropdown"><a
+                        class="nav-link dropdown-toggle text-main-color-dark px-0 navbar-size-14"
+                        style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;" href="#"
+                        id="navbarDropdownUserMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                    <img src="/img/profile-icon.svg" alt="" class="px-2"/>
+                    &#x42F;&#x440;&#x43E;&#x441;&#x43B;&#x430;&#x432; &#x422;&#x435;&#x441;&#x442;
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUserMenuLink">
+                        <a class="dropdown-item" href="/Account/Update">M&#x43E;&#x457; &#x434;&#x430;&#x43D;&#x456;</a>
+                        <a class="dropdown-item" href="/Account/AddBalance">&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438;
+                            &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;</a>
+                        <a id="changechield-1" class="dropdown-item" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                            &#x434;&#x438;&#x442;&#x438;&#x43D;&#x443;</a>
+
+                        <a id="selectcompany-1" class="dropdown-item" data-userid="ec2c47b3-df91-4c14-abd6-303d63745ab4"
+                           href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x456;&#x44E;</a>
+                    </div>
+                </li>
+                <li class="nav-item ml-3">
+                    <a class="nav-link text-main-color-dark px-0 navbar-size-14"
+                       style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;" href="/MyOrders">
+                        <img src="/img/basket-icon.svg" alt="" class="px-2"/>&#x41C;&#x43E;&#x457; &#x437;&#x430;&#x43C;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;
+                    </a>
+                </li>
+                <li class="nav-item ml-3">
+                    <a id="logoutLink" class="nav-link text-main-color-dark px-0 navbar-size-14"
+                       style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;"
+                       href="/Account/LogOut">
+                        <img src="/img/logout-icon.svg" alt="" class="px-2">&#x412;&#x438;&#x439;&#x442;&#x438;
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<main class="row mr-0 ml-0">
+
+
+    <div class="container-xl container container-md container-sm container-lg">
+        <div class="row align-items-center pb-3 ml-xl-0 ml-md-0 ml-sm-0 p-0 ml-0 mt-lg-5 mt-md-5 mt-2">
+            <div class="col-7 col-xl-9 col-md-6 col-sm-6 align-content-center mr-md-auto pl-0">
+                <p class="h2"
+                                                                                                  style="font-weight: 600; font-size: 34px">
+                Поповнити рахунок
+            </p>
+            </div>
+            <div class="col-12 p-0 mt-4 mt-sm-4 mb-3 mb-sm-5">
+                <div class="d-flex justify-content-center flex-column align-items-center">
+                    <div class="col-12 details-balance ">
+                        <div class=" details-balance__card details-balance__card--green">
+                            <div class="details-balance__title">
+                                <p>Поточний баланс </p>
+                            </div>
+
+                            <div class="details-balance__summary">
+                                <p>4 500.55 <sup>₴</sup></p>
+                            </div>
+                        </div>
+                        <div class=" details-balance__card">
+                            <div class="details-balance__left">
+                                <div class="col-12">
+                                    <p>Витрати:</p>
+                                    <span>145 656.44 ₴</span>
+
+                                </div>
+                                <div class="col-12">
+                                    <p>Поточних замовлень:</p>
+                                    <span>345</span>
+                                </div>
+                                <div class="col-12">
+                                    <p>Баланс з урах. замовлень:</p>
+                                    <span>145 656.44 ₴</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="mt-lg-5 mt-2 col-12 payment-systems">
+                        <p class="h3 mt-4">Способи оплати</p>
+                        <div class="row justify-content-center ">
+                            <div class="col-12 d-flex flex-wrap align-items-stretch mt-3 mt-sm-1">
+                                <div class="payment-single border rounded">
+                                    <div class="img">
+                                        <img src="./img/WayForPay_logo.png" alt="">
+                                    </div>
+                                    <p>Wayforpay</p>
+                                    <span>Комісія сервісу - 2,5%, зараховуються на баланс в системі замовлень впродовж 1-15 хвилин </span>
+
+                                    <div class="add-money">
+                                        <div class="add-money__value add-money__value--minus">-</div>
+                                        <input class="form-control font-weight-bold" id="liqpay-amount"
+                                               type="number" name="amount"
+                                               value="3000.00" placeholder="Сумма" style="">
+                                        <div class="add-money__value add-money__value--plus">+</div>
+
+                                    </div>
+
+
+                                    <button type="button" id="addliqpay-btn"
+                                            class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                            onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                            onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                            style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                        ＋Поповнити Рахунок
+                                    </button>
+
+
+                                </div>
+                                <div class="payment-single border rounded">
+                                    <div class="img">
+                                        <img src="./img/privat.png" alt="">
+                                    </div>
+                                    <p>ПриватБанк</p>
+                                    <span>Комісія - 1 грн або ж згідно інших тарифів банку, зарахування коштів на баланс в системі замовлень відбувається після надходження коштів на рахунок компанії в робочий час будніх днів </span>
+                                    <button type="button"
+                                            class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                            onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                            onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                            style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                        ＋Поповнити Рахунок
+                                    </button>
+                                </div>
+                                <div class="payment-single border rounded">
+                                    <div class="img">
+                                        <img src="./img/props-req.svg" alt="">
+                                    </div>
+                                    <p>Сплатити за реквізитами </p>
+                                    <span>Cплачується комісія Вашого банку, зарахування коштів на баланс в системі замовлень відбувається після надходження коштів на рахунок компанії в робочий час будніх днів </span>
+                                    <button type="button" data-toggle="modal" data-target="#requisites"
+                                            class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                            onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                            onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                            style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                        ＋Поповнити Рахунок
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="ModalPopUp" role="dialog">
+        <div class="modal-dialog err-pop" style="">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+
+</main>
+
+
+<footer class="footer row m-0" style="background: #222222">
+    <div class="w-100 p-0 first-footer d-flex align-items-center">
+        <div class="container">
+            <div class="col-12 p-0 d-flex justify-content-between align-items-center">
+                <div class="col-lg-9 col-md-9 col-6 p-0 justify-content-center align-items-center">
+                    <nav class="nav col-12 p-0 d-flex justify-content-between">
+                        <div class=" p-0 justify-content-between d-none d-lg-flex d-md-flex non-visible-mob"
+                             style="width: 120px; "><a
+                                style="height: 50px; width: 50px; border: 1px solid #B1B1B1; border-radius: 50%; text-decoration: none;"
+                                href="https://www.facebook.com/kabachokUA/"></a> <a
+                                style="height: 50px; width: 50px; border: 1px solid #B1B1B1; border-radius: 50%; text-decoration: none;"
+                                href="https://www.instagram.com/kabachok_ua/"></a>
+                        </div>
+                        <div class=" justify-content-between d-flex d-lg-none d-md-none visible-mob"
+                             style="width: 70px; "><a style="height: 20px; width: 20px; text-decoration: none;"
+                                                      href="https://www.facebook.com/kabachokUA/"></a> <a
+                                style="height: 20px; width: 20px; text-decoration: none;"
+                                href="https://www.instagram.com/kabachok_ua/"></a></div>
+                        <div class="col-9 justify-content-between align-items-center d-sm-flex d-lg-flex d-md-flex flex-grow-1 mail-non-visible">
+                            <div class="col-5 p-0" style="font-size: 16px; color: #ffffff">
+                                <img src="/img/phone-footer-pc.svg" alt="" style="margin-right: 6px">
+                                <a href="tel:0935774000" style="color: white">+38(093)5774000</a></div>
+                            <div class="col-7 col-sm-12 p-0" style="font-size: 16px; color: #ffffff">
+                                <img src="/img/mail-footer-pc.svg" alt="" style="margin-right: 6px">
+                                <a href="mailto:admin@kabachok.group" style="color: white">admin@kabachok.group</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-3 col-lg-3 col-6 p-0 justify-content-center" style="height: 24px">
+                    <nav class="nav justify-content-end"><a class="nav-link p-0 align-self-center" href="/Home/About"
+                                                            style="color: #36C233; font-size: 14px; line-height: 16px;">About
+                        Us</a>
+                        <div class="align-self-center px-3" style="color: #36C233">|</div>
+                        <a class="nav-link p-0 align-self-center" href="/Home/Privacy"
+                           style="color: #36C233; font-size: 14px; line-height: 16px;">Privacy</a>
+                        <div class="align-self-center px-3" style="color: #36C233">|</div>
+                        <a class="nav-link p-0 align-self-center" href="/Home/Privacy"
+                           style="color: #36C233; font-size: 14px; line-height: 16px;">Terms</a></nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-0 w-100 d-flex align-items-center second-footer" style="height: 38px;">
+        <div class="container container-sm container-md container-lg">
+            <div class="col-12 p-0 d-flex justify-content-center"
+                 style="color: #ffffff; font-size: 14px; line-height: 16px;">
+                <span>© 2020 &#x41A;&#x430;&#x431;&#x430;&#x447;&#x43E;&#x43A; &#x41F;&#x440;.&#x431;&#x435;&#x440;&#x435;&#x433;</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="./js/resources.js"></script>
+<script src="./js/changeAmount.js"></script>
+<!--<script src="./js/site.js?v=IKiduzxdPlirkJ5c-nOb06AWFoMpTQCQPjrAcsz3iP4"></script>-->
+<script src="/js/animation-bg-main-page.js"></script>
+<script>
+    $('#sources').each(function () {
+        let classes = $(this).attr("class"),
+            id = $(this).attr("id"),
+            name = $(this).attr("name");
+        let template = '<div class="' + classes + '">';
+        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function () {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+        });
+        template += '</div></div>';
+
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function () {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function () {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function () {
+        $('html').one('click', function () {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this).parents(".custom-select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function () {
+        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".custom-select").removeClass("opened");
+        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+
+    $('.delete-parent').click(function () {
+        $(this).closest('.parent-delete').remove();
+    });
+
+
+</script>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js" crossorigin="anonymous"
+        integrity="sha384-Fnqn3nxp3506LP/7Y3j/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe/G/k">
+</script>
+<script>(window.jQuery && window.jQuery.validator || document.write("\u003Cscript src=\u0022/lib/jquery-validation/dist/jquery.validate.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-Fnqn3nxp3506LP/7Y3j/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe/G/k\u0022\u003E\u003C/script\u003E"));</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"
+        crossorigin="anonymous" integrity="sha384-JrXK+k53HACyavUKOsL+NkmSesD2P+73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH">
+</script>
+<script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive || document.write("\u003Cscript src=\u0022/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-JrXK\u002Bk53HACyavUKOsL\u002BNkmSesD2P\u002B73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH\u0022\u003E\u003C/script\u003E"));</script>
+
+<script id="widget-wfp-script" language="javascript" type="text/javascript"
+        src="https://secure.wayforpay.com/server/pay-widget.js"></script>
+<script>
+    $(function () {
+        var userId = document.getElementById("id-value-id-user").value;
+        $(document).on("click", "#btnLink", function () {
+            $('#ModalPopUp').modal('show');
+            $(".modal-content").html(gethtmlloading());
+            var urlfin = '/Account/ChangePasswordModal?userId=' + userId;
+            $.get(urlfin, function (data) {
+                $(".modal-content").html(data);
+            });
+        });
+        $(document).on('click', '[data-save="modal"]', function (event) {
+            event.preventDefault();
+
+            var form = $(this).parent().parents().find('.modal-body').find('form');
+            var actionUrl = form.attr('action');
+            var dataToSend = form.serialize();
+
+            $.post(actionUrl, dataToSend).done(function (data, statusText, xhr) {
+                var isValid = false;
+
+                if (data && data.res && data.res == "OK")
+                    isValid = true;
+
+                if (isValid) {
+                    $('#modDialog').modal('hide');
+                    $('#dialogContent').empty();
+
+                    window.location.href = data.returnUrl;
+                } else {
+                    var newBody = $('.modal-body', data);
+                    $(document).find('.modal-body').replaceWith(newBody);
+                }
+            }).fail(function (xhr, status, error) {
+                var message = error + '\r\n';
+                if (xhr)
+                    message += xhr.responseText;
+                dialog_error(message);
+                // $('html').html(xhr.responseText);
+            });
+        });
+
+        $("#nav-content-fin").html(gethtmlloading());
+
+        $.get('/Account/UserFinance', function (data) {
+
+            $("#nav-content-fin").html(data);
+            var enable_liqpay = false;
+            enable_liqpay = true;
+
+            function to2(item, index, arr) {
+                arr[index] = item.toFixed(2);
+            }
+
+            $(document).on('click', '#addliqpay-btn', function (e) {
+                e.preventDefault();
+                $(this).html("Обробка...").css({
+                    "cursor": "wait",
+                    "pointer-events": "none"
+                });
+                if (enable_liqpay == true) {
+                    var amount = parseFloat($('#liqpay-amount').val());
+                    amount = amount.toFixed(2);
+                    var url = '/PaymentWayForPay/GetCheckOut?amount=' + amount;
+
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        dataType: 'json',
+                        success: function (res) {
+                            if (typeof res.error == 'undefined') {
+                                var wayforpay = new Wayforpay();
+                                res.productPrice.forEach(to2);
+                                res.amount = res.amount.toFixed(2);
+                                var pay = function () {
+                                    wayforpay.run({
+                                            merchantAccount: res.merchantAccount,
+                                            merchantDomainName: res.merchantDomainName,
+                                            merchantTransactionSecureType: res.merchantTransactionSecureType,
+                                            authorizationType: "SimpleSignature",
+                                            orderDate: res.orderDate,
+                                            merchantSignature: res.merchantSignature,
+                                            orderReference: res.orderReference,
+                                            amount: res.amount,
+                                            currency: res.currency,
+                                            productName: res.productName,
+                                            productPrice: res.productPrice,
+                                            productCount: res.productCount,
+                                            serviceUrl: res.serviceUrl,
+                                            returnUrl: res.returnUrl
+                                        }
+                                    );
+                                }
+                                console.log(res);
+                                pay();
+                                $("#addliqpay-btn").html("&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438; &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;").css({
+                                    "cursor": "",
+                                    "pointer-events": ""
+                                });
+                            } else {
+                                console.log(typeof res.error == 'undefined');
+                                dialog_error(res);
+                                $("#addliqpay-btn").html("&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438; &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;").css({
+                                    "cursor": "",
+                                    "pointer-events": ""
+                                });
+                            }
+
+                        }
+                    });
+                }
+            });
+
+        });
+
+        $.get('/Account/UserChilds?view=UserChildsData', function (data) {
+            var childcontainer = $('#child-container')
+            childcontainer.find('.child-data').remove();
+            childcontainer.append(data);
+            // $("#nextchilds").html(data);
+
+        });
+        $("#addchild").click(function (e) {
+            e.preventDefault();
+            var token = $("[name='__RequestVerificationToken'").val();
+            $.post('/Account/AddNewChild', {__RequestVerificationToken: token}).done(function (data, statusText, xhr) {
+                //alert(data);
+                var childcontainer = $('#child-container');
+                childcontainer.find('.child-data').remove();
+                childcontainer.append(data);
+            })
+                .fail(function (xhr, code, error) {
+                    dialog_error(error);
+                });
+        });
+
+        function isFileImage(file) {
+            const acceptedImageTypes = ['image/jpeg', 'image/png'];
+
+            return file && acceptedImageTypes.includes(file['type'])
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var target_img = $($(input).attr('data-target'));
+                if (!isFileImage(input.files[0])) {
+                    $(input).val('');
+                    return;
+                }
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(target_img).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).on("change", ".custom-file-input", function () {
+            readURL(this);
+        });
+
+        setup_listitems({href: '/Account', method: "UserFinance"});
+    });
+
+</script>
+
+
+</body>
+</html>
+

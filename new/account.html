@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Кабачок</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/custom-select.css"/>
+
+
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100%; position: relative">
+
+
+<header style="position: relative;">
+    <div class="container-xl container-md container-sm container" style="height: 90px; ">
+        <div id="cookies"></div>
+        <nav class="navbar navbar-light navbar-expand-lg navbar-expand-md flex-grow-0 px-0 justify-content-between"><a
+                class="navbar-brand" href="/" style="max-width: 179px"><img src="/img/logo.png" alt="Catering logo"
+                                                                            style="width: 100%;"></a>
+
+            <button class="navbar-toggler pr-0 d-block d-md-none d-lg-none button-burger-for-click button-burger "
+                    type="button"
+                    onclick="$('.modal-burger').toggleClass('modal-burger-toggle'); $('.button-burger-for-click').toggleClass('button-burger')"
+                    style="border: none; outline: none;"></button>
+            <div class="col-lg-7 col-md-7 p-0 d-none d-md-flex d-lg-flex justify-content-center align-items-center">
+                <ul class="navbar-nav nav d-flex flex-grow-1 flex-row">
+                    <li class="nav-item ml-3 dropdown">
+                        <div class="nav-link text-main-color-dark px-0 navbar-size-14 dropdown-toggle"
+                             id="dropdown-userprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                             style="color: #232323; cursor: pointer">
+                            <img src="/img/profile-icon.svg" alt="" class="px-2"/>
+                            &#x42F;&#x440;&#x43E;&#x441;&#x43B;&#x430;&#x432; &#x422;&#x435;&#x441;&#x442;
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownUserMenuLink"
+                             id="dropdown-userprofile">
+                            <a class="dropdown-item" href="/Account/Update">M&#x43E;&#x457;
+                                &#x434;&#x430;&#x43D;&#x456;</a>
+                            <a class="dropdown-item" href="/Account/AddBalance">&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438;
+                                &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;</a>
+                            <a id="changechield" class="dropdown-item" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                                &#x434;&#x438;&#x442;&#x438;&#x43D;&#x443;</a>
+
+                            <a id="selectcompany" class="dropdown-item"
+                               data-userid="ec2c47b3-df91-4c14-abd6-303d63745ab4" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                                &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x456;&#x44E;</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link text-main-color-dark px-0 navbar-size-14"
+                           style="color: #232323; cursor: pointer; font-size: 14px;" href="/MyOrders">
+                            <img src="/img/basket-icon.svg" alt="" class="px-2"/>&#x41C;&#x43E;&#x457; &#x437;&#x430;&#x43C;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a id="logoutLink" class="nav-link text-main-color-dark px-0 navbar-size-14"
+                           style="color: #232323; cursor: pointer; font-size: 14px;" href="/Account/LogOut">
+                            <img src="/img/logout-icon.svg" alt="" class="px-2">&#x412;&#x438;&#x439;&#x442;&#x438;
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="modal-burger">
+
+    <div class="container d-flex flex-column flex-grow-1">
+        <nav class="navbar navbar-light navbar-expand-lg flex-grow-0 px-0"><a class="navbar-brand" href="/"
+                                                                              style="max-width: 179px">
+            <img src="/img/logo.png" alt="Catering logo" style="width: 100%;">
+        </a>
+            <button class="navbar-toggler pr-0 button-burger-for-click button-burger " type="button"
+                    onclick="$('.modal-burger').toggleClass('modal-burger-toggle'); $('.button-burger-for-click').toggleClass('button-burger')"
+                    style="border: none; outline: none;"></button>
+        </nav>
+        <div class="col-12 p-0 d-flex">
+            <ul class="navbar-nav nav">
+                <li class="nav-item ml-3 dropdown"><a
+                        class="nav-link dropdown-toggle text-main-color-dark px-0 navbar-size-14"
+                        style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;" href="#"
+                        id="navbarDropdownUserMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                    <img src="/img/profile-icon.svg" alt="" class="px-2"/>
+                    &#x42F;&#x440;&#x43E;&#x441;&#x43B;&#x430;&#x432; &#x422;&#x435;&#x441;&#x442;
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUserMenuLink">
+                        <a class="dropdown-item" href="/Account/Update">M&#x43E;&#x457; &#x434;&#x430;&#x43D;&#x456;</a>
+                        <a class="dropdown-item" href="/Account/AddBalance">&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438;
+                            &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;</a>
+                        <a id="changechield-1" class="dropdown-item" href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438;
+                            &#x434;&#x438;&#x442;&#x438;&#x43D;&#x443;</a>
+
+                        <a id="selectcompany-1" class="dropdown-item" data-userid="ec2c47b3-df91-4c14-abd6-303d63745ab4"
+                           href="#">&#x412;&#x438;&#x431;&#x440;&#x430;&#x442;&#x438; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x456;&#x44E;</a>
+                    </div>
+                </li>
+                <li class="nav-item ml-3">
+                    <a class="nav-link text-main-color-dark px-0 navbar-size-14"
+                       style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;" href="/MyOrders">
+                        <img src="/img/basket-icon.svg" alt="" class="px-2"/>&#x41C;&#x43E;&#x457; &#x437;&#x430;&#x43C;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;
+                    </a>
+                </li>
+                <li class="nav-item ml-3">
+                    <a id="logoutLink" class="nav-link text-main-color-dark px-0 navbar-size-14"
+                       style="color: #232323; cursor: pointer; font-weight: 600; font-size: 28px;"
+                       href="/Account/LogOut">
+                        <img src="/img/logout-icon.svg" alt="" class="px-2">&#x412;&#x438;&#x439;&#x442;&#x438;
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<main class="row mr-0 ml-0">
+
+
+    <div class="container-xl container container-md container-sm container-lg">
+        <div class="row align-items-center pb-3 ml-xl-0 ml-md-0 ml-sm-0 p-0 ml-0 mt-lg-5 mt-md-5 mt-2">
+            <div class="col-7 col-xl-9 col-md-6 col-sm-6 align-content-center mr-md-auto pl-0"><p class="h2"
+                                                                                                  style="font-weight: 600; font-size: 34px">
+                Головна
+            </p></div>
+        </div>
+
+        <form method="post" role="form" enctype="multipart/form-data" action="/Account/Update">
+            <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                <ul>
+                    <li style="display:none"></li>
+                </ul>
+            </div>
+            <ul class="nav nav-tabs justify-content-lg-center justify-content-md-center justify-content-between "
+                id="tab-profile" role="tablist">
+                <li class="nav-item"><a class="nav-link active" style="width: 100%;" id="home-tab" data-toggle="tab"
+                                        href="#profile-home"
+                                        role="tab"
+                                        aria-controls="home"
+                                        aria-selected="true">Головна</a>
+                </li>
+                <li class="nav-item mr-2 ml-2"><a class="nav-link" style="width: 100%;" id="child-tab" data-toggle="tab"
+                                                  href="#profile-child"
+                                                  role="tab"
+                                                  aria-controls="childs"
+                                                  aria-selected="false">Діти</a></li>
+                <li class="nav-item"><a class="nav-link " style="width: 100%;" id="finance-tab" data-toggle="tab"
+                                        href="#nav-content-fin"
+                                        role="tab"
+                                        aria-controls="finance"
+                                        aria-selected="false">Фінанси</a></li>
+            </ul>
+            <div class="tab-content mt-lg-5 pt-lg-3 mt-md-5 pt-md-3 mt-3 pt-0" id="profile-tab">
+                <input type="hidden" id="id-value-id-user" name="Id" value="ec2c47b3-df91-4c14-abd6-303d63745ab4"/>
+                <div class="tab-pane fade show active" id="profile-home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row p-0 flex-lg-row flex-md-row flex-column">
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-end align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="NameSurname">&#x406;&#x43C;&#x2019;&#x44F; &#x442;&#x430; &#x43F;&#x440;&#x456;&#x437;&#x432;&#x438;&#x449;&#x435;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-name"
+                                   placeholder="Ім'я" style="height: 34px" name="NameSurname"
+                                   value="&#x42F;&#x440;&#x43E;&#x441;&#x43B;&#x430;&#x432; &#x422;&#x435;&#x441;&#x442;">
+                        </div>
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-start align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="Address1">&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; 1</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3"
+                                   id="input-first-address" placeholder="" name="Address1" value="">
+                        </div>
+                    </div>
+                    <div class="row p-0 flex-lg-row flex-md-row flex-column">
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-end align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="PhoneNumber">&#x422;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3"
+                                   id="input-phone-number" placeholder="(XXX) XXX - XXXX" name="PhoneNumber"
+                                   value="0930275913">
+                        </div>
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-start align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="Address2">&#x410;&#x434;&#x440;&#x435;&#x441;&#x430; 2</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3"
+                                   id="input-second-address" placeholder="" name="Address2" value="">
+                        </div>
+                    </div>
+                    <div class="row p-0 flex-lg-row flex-md-row flex-column">
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-end align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="City">&#x41C;&#x456;&#x441;&#x442;&#x43E;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-city"
+                                   placeholder="" autocomplete="off" name="City" value="">
+                        </div>
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-start align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="ZipCode">&#x41F;&#x43E;&#x448;&#x442;. &#x406;&#x43D;&#x434;&#x435;&#x43A;&#x441;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-post-index"
+                                   placeholder="" style="height: 34px" name="ZipCode" value="">
+                        </div>
+                    </div>
+                    <div class="row p-0 flex-lg-row flex-md-row flex-column">
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-end align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="Country">&#x41A;&#x440;&#x430;&#x457;&#x43D;&#x430;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-country"
+                                   placeholder="Країна" name="Country" value="">
+                        </div>
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-start align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="CompanyName">&#x41D;&#x430;&#x437;&#x432;&#x430; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x456;&#x457;</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-companyname"
+                                   placeholder="" style="height: 34px" autocomplete="off" disabled name="CompanyName"
+                                   value="&#x41A;&#x430;&#x431;&#x430;&#x447;&#x43E;&#x43A; &#x41F;&#x440;.&#x431;&#x435;&#x440;&#x435;&#x433;">
+                        </div>
+                    </div>
+                    <div class="row p-0 flex-lg-row flex-md-row flex-column">
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-end align-content-center">
+                            <label class="profile-form-title col-12 col-lg-3 col-md-3 p-0 d-flex align-items-center mb-0"
+                                   for="Email">E-mail</label>
+                            <input type="text" class="form-control col-12 col-lg-6 col-md-6 pl-3" id="input-email"
+                                   placeholder="" readonly data-val="true"
+                                   data-val-email="The E-mail field is not a valid e-mail address." name="Email"
+                                   value="yaroslav0013@gmail.com">
+                        </div>
+                        <div class="form-group d-flex flex-lg-row flex-md-row flex-column col-lg-6 col-md-6 col-12 input-row-black justify-content-start align-content-center">
+                            <div class="col-12 my-2 text-center">
+                                <button type="button" name="btnLink" id="btnLink" button
+                                        class="btn btn-primary m-2 col-sm-4 col-xl-4 col-12 text-center"
+                                        style="background: #36C233; border: 1px solid #36C233; height:36px">
+                                    &#x417;&#x43C;&#x456;&#x43D;&#x430; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44E;
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade"
+                     id="profile-child" role="tabpanel"
+                     aria-labelledby="child-tab">
+                    <div id="child-container" class="d-flex justify-content-center flex-column align-items-center">
+                        <div class="col-12 col-md-8 col-lg-9 p-0 d-flex align-items-center">
+                            <div class="col-6 col-md-6 col-lg-6 p-0 d-flex flex-md-row flex-lg-row flex-column justify-content-between align-items-lg-center align-items-md-center">
+                                <label class="profile-form-title mb-1 justify-content-start mb-lg-0 mb-md-0"
+                                       for="ChildrenCount">&#x41A;&#x456;&#x43B;&#x44C;&#x43A;&#x456;&#x441;&#x442;&#x44C;
+                                    &#x434;&#x456;&#x442;&#x435;&#x439;</label>
+                                <span id="child-amount">
+ <input class="form-control col-12 col-lg-6 col-md-6 pl-3" autocomplete="off" readonly type="number" data-val="true"
+        data-val-required="The &#x41A;&#x456;&#x43B;&#x44C;&#x43A;&#x456;&#x441;&#x442;&#x44C; &#x434;&#x456;&#x442;&#x435;&#x439; field is required."
+        id="ChildrenCount" name="ChildrenCount" value="2"/>
+
+ </span></div>
+                            <div class="col-6 p-0 d-flex justify-content-end align-self-end align-self-sm-end align-self-md-center"
+                                 style="height: 34px">
+                                <button type="button" id="addchild"
+                                        class=" btn btn-xl btn-outline-danger justify-content-center float-md-none font-weight-bold btn-block col-lg-5 col-md-5 col-7 m-0 p-0"
+                                        onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                        onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                        style="background: #ffffff; border-color: #36C233; outline: none; height: 34px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; margin: 28px 0 23px; font-size: 14px;">
+                                    &#65291; &#x414;&#x43E;&#x434;&#x430;&#x442;&#x438;
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade table-content  " data-sortfield="" data-sortorder="ASC"
+                     data-filter=""
+                     id="nav-content-fin" role="tabpanel" aria-labelledby="nav-tab-fin">
+                    <div class="d-flex justify-content-center flex-column align-items-center">
+                        <div class="col-12 details-balance ">
+                            <div class=" details-balance__card details-balance__card--green">
+                                <div class="details-balance__title">
+                                    <p>Поточний баланс </p>
+                                </div>
+
+                                <div class="details-balance__summary">
+                                    <p>4 500.55 <sup>₴</sup></p>
+                                </div>
+                            </div>
+                            <div class=" details-balance__card details-balance__card--red">
+                                <div class="details-balance__title">
+                                    <p>Надходження </p>
+                                </div>
+
+                                <div class="details-balance__summary">
+                                    <p>4 500.55 <sup>₴</sup></p>
+                                </div>
+                            </div>
+                            <div class=" details-balance__card">
+                                <div class="details-balance__left">
+                                    <div class="col-12">
+                                        <p>Витрати:</p>
+                                        <span>145 656.44 ₴</span>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Поточних замовлень:</p>
+                                        <span>345</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Баланс з урах. замовлень:</p>
+                                        <span>145 656.44 ₴</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="mt-lg-5 mt-2 col-12 payment-systems">
+                            <p class="h3 mt-4">Способи оплати</p>
+                            <div class="row justify-content-center ">
+                                <div class="col-12 d-flex flex-wrap align-items-stretch mt-3 mt-sm-1">
+                                    <div class="payment-single border rounded">
+                                        <div class="img">
+                                            <img src="./img/WayForPay_logo.png" alt="">
+                                        </div>
+                                        <p>Wayforpay</p>
+                                        <span>Комісія сервісу - 2,5%, зараховуються на баланс в системі замовлень впродовж 1-15 хвилин </span>
+
+                                        <div class="add-money">
+                                            <div class="add-money__value add-money__value--minus">-</div>
+                                            <input class="form-control font-weight-bold" id="liqpay-amount"
+                                                   type="number" name="amount"
+                                                   value="3000.00" placeholder="Сумма" style="">
+                                            <div class="add-money__value add-money__value--plus">+</div>
+
+                                        </div>
+
+
+                                        <button type="button" id="addliqpay-btn"
+                                                class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                                onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                                onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                                style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                            ＋Поповнити Рахунок
+                                        </button>
+
+
+                                    </div>
+                                    <div class="payment-single border rounded">
+                                        <div class="img">
+                                            <img src="./img/privat.png" alt="">
+                                        </div>
+                                        <p>ПриватБанк</p>
+                                        <span>Комісія - 1 грн або ж згідно інших тарифів банку, зарахування коштів на баланс в системі замовлень відбувається після надходження коштів на рахунок компанії в робочий час будніх днів </span>
+                                        <button type="button"
+                                                class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                                onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                                onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                                style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                            ＋Поповнити Рахунок
+                                        </button>
+                                    </div>
+                                    <div class="payment-single border rounded">
+                                        <div class="img">
+                                            <img src="./img/props-req.svg" alt="">
+                                        </div>
+                                        <p>Сплатити за реквізитами </p>
+                                        <span>Cплачується комісія Вашого банку, зарахування коштів на баланс в системі замовлень відбувається після надходження коштів на рахунок компанії в робочий час будніх днів </span>
+                                        <button type="button" data-toggle="modal" data-target="#requisites"
+                                                class="btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                                onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                                onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                                style=" background: #ffffff; border-color: #36C233; outline: none; height: 48px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;">
+                                            ＋Поповнити Рахунок
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-lg-5 mt-2 col-12 p-0 payment-report">
+                            <p class="h3 mt-4">Звіт</p>
+                            <div class="col-12 p-0 d-flex mt-4 flex-wrap justify-content-between">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12 d-flex justify-content-lg-between justify-content-md-between justify-content-center flex-md-row flex-lg-row flex-column p-0"
+                                     style="box-sizing: border-box">
+                                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 p-0 d-flex justify-content-between align-items-center "
+                                         style="height: 34px"><label for="datefrom" class="mb-0"
+                                                                     style="font-size: 16px; color: #232323">Вiд:</label>
+                                        <input id="datefrom"
+                                               class="inputs-report ml-3 mr-lg-3 mr-md-3 mr-0 hasDatepicker">
+                                    </div>
+                                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 p-0 d-flex justify-content-between align-items-center mt-3 mt-lg-0 mt-md-0"
+                                         style="height: 34px"><label for="dateto" class="mb-0 ml-lg-3 ml-md-3 ml-0"
+                                                                     style="font-size: 16px; color: #232323">До:</label>
+                                        <input id="dateto" class="inputs-report ml-3 hasDatepicker"></div>
+                                </div>
+                                <div class="col-12 col-lg-2 col-md-5 col-sm-5 p-0 d-flex justify-content-between align-items-center mt-3 mt-sm-0 mt-md-0"
+                                     style="box-sizing: border-box">
+
+                                    <a class="set-datefrom set-dateto set-format btn text-uppercase btn-xl btn-outline-danger font-weight-bold btn-block "
+                                       onmousemove="this.style.background='#36C233'; this.style.color='#ffffff'"
+                                       onmouseout="this.style.background='#ffffff'; this.style.color='#36C233'"
+                                       style=" background: #ffffff; border-color: #36C233; outline: none; height: 34px; color: #36C233; display: flex; align-items: center; justify-content: space-evenly; font-size: 14px;"
+                                       href="/Account/UserFinanceReport?datefrom=2021-04-24&amp;dateto=2021-04-27">зберегти
+                                        Звіт</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finance-table col-12 p-0">
+                            <div class="w-100 mt-3 mt-sm-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 bg-info">
+                                        Надходження
+                                    </div>
+                                </div>
+
+                                <div class="row ml-0 mr-0 justify-content-start w-100 align-content-center d-lg-flex d-none d-md-flex d-sm-none mt-3"
+                                     style="height: 40px; font-weight: 500; font-size: 18px; color: #232323; background: #F7F7F7;">
+
+                                    <div class="col-3"><span>Дата</span></div>
+                                    <div class="col-7"><span>Коментар</span></div>
+                                    <div class="col-2"><span>Сума</span></div>
+
+                                </div>
+                                <div class="row mx-0 justify-content-start w-100 align-content-center">
+                                    <div class="col-12 p-0  mt-2">
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                                </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="w-100 mt-3 mt-sm-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 bg-info">
+                                        Витрати
+                                    </div>
+                                </div>
+                                <div class="row ml-0 mr-0 justify-content-start w-100 align-content-center d-lg-flex d-none d-md-flex d-sm-none mt-3"
+                                     style="height: 40px; font-weight: 500; font-size: 18px; color: #232323; background: #F7F7F7;">
+
+                                    <div class="col-3"><span>Дата</span></div>
+                                    <div class="col-7"><span>Коментар</span></div>
+                                    <div class="col-2"><span>Сума</span></div>
+
+                                </div>
+                                <div class="row mx-0 justify-content-start w-100 align-content-center">
+                                    <div class="col-12 p-0  mt-2">
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                                                                                                                                                                                                                                 style="font-size: 16px"><span
+                                                    class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                    style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                    class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                            </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                                                                                                                                                                                                                                 style="font-size: 16px"><span
+                                                    class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                    style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                    class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                            </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                                                                                                                                                                                                                                 style="font-size: 16px"><span
+                                                    class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                    style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                    class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                            </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                                                                                                                                                                                                                                 style="font-size: 16px"><span
+                                                    class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                    style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                    class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                            </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-0 d-flex box-shadow-container brd-bot-line mb-3 mb-lg-0 mb-md-0 pb-sm-0 pb-3"
+                                             style="min-height: 52px; color: #232323">
+                                            <div class="col-12 p-0  d-flex flex-lg-row flex-md-row flex-column align-items-center mt-2 mt-lg-0 mt-md-0">
+                                                <div class="col-md-3 col-lg-3 col-sm-6 col-8 d-flex flex-row flex-lg-column flex-md-column mt-1  align-self-start " style="font-size: 16px;">
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-6 p-sm-0 pl-sm-0 pl-1 change-bg-grey" style="font-family: Open-Sans, sans-serif">15.11.2019</span>
+                                                    <span class="p-0 d-flex col-1 d-md-none d-lg-none change-bg-grey" style="font-family: Open-Sans, sans-serif"> | </span>
+                                                    <span class="col-lg-12 col-md-12 col-sm-4 col-5 p-0 change-color-grey change-bg-grey" style="font-family: Open-Sans, sans-serif; ">10:20:29</span></div>                                                <div class="col-md-7 col-lg-7 col-12 d-flex justify-content-between mt-1"
+                                                                                                                                                                                                                                                                 style="font-size: 16px"><span
+                                                    class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                    style="font-size: 14px; font-weight: bold">Коментар</span><span
+                                                    class="col-lg-12 col-md-12 col-6 p-0">Expired</span>
+                                            </div>
+                                                <div class="col-md-2 col-lg-2 col-12 d-flex justify-content-between mt-1"
+                                                     style="font-size: 16px"><span
+                                                        class="col-6 p-0 d-md-none d-lg-none d-inline"
+                                                        style="font-size: 14px; font-weight: bold">Сума</span><span
+                                                        class="col-lg-12 col-md-12 col-6 p-0">40 000,00 </span></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row align-self-sm-end align-self-center" style="margin-top: 92px;">
+                            <div class="col-sm">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="apagebottom page-link m-lg-1 m-sm-2 m-md-3 m-2 mt-0 mb-0"
+                                               aria-label="Previous"
+                                               style="border: none; color: #232323; width: 40px; height: 40px; background: #F1F2F4; border-radius: 0; text-align: center"
+                                               href="/Account/ListItems?sortorder=asc&amp;page=0">
+                                                <span aria-hidden="true">&lt;</span> <span
+                                                    class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="apagebottom page-link m-lg-1 m-sm-2 m-md-3 m-2 mt-0 mb-0 active-custom"
+                                               style="border: none; color: #232323; font-family: Open-Sans; font-size: 16px; line-height: 22px; width: 40px; height: 40px;  text-align: center"
+                                               href="/Account/ListItems?sortorder=asc&amp;page=0">
+                                                0<span class="sr-only">(current)</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="apagebottom page-link m-lg-1 m-sm-2 m-md-3 m-2 mt-0 mb-0"
+                                               style="border: none; color: #232323; font-family: Open-Sans; font-size: 16px; line-height: 22px; width: 40px; height: 40px; background: #F1F2F4; text-align: center"
+                                               href="/Account/ListItems?sortorder=asc&amp;page=1">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="apagebottom page-link m-lg-1 m-sm-2 m-md-3 m-2 mt-0 mb-0"
+                                               style="border: none; color: #232323; font-family: Open-Sans; font-size: 16px; line-height: 22px; width: 40px; height: 40px; background: #F1F2F4; text-align: center"
+                                               href="/Account/ListItems?sortorder=asc&amp;page=2">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="apagebottom page-link m-lg-1 m-sm-2 m-md-3 m-2 mt-0 mb-0"
+                                               aria-label="Next"
+                                               style="border: none; color: #232323; width: 40px; height: 40px; background: #F1F2F4; border-radius: 0; text-align: center"
+                                               href="/Account/ListItems?sortorder=asc&amp;page=3">
+                                                <span aria-hidden="true">&gt;</span> <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-12 my-2 text-center">
+                            <button type="submit" button class="btn btn-primary m-2 col-sm-4 col-xl-4 col-12"
+                                    style="background: #36C233; border: 1px solid #36C233; height: 48px"
+                                    formaction="/Account/Update">
+                                &#x417;&#x431;&#x435;&#x440;&#x435;&#x433;&#x442;&#x438;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input name="__RequestVerificationToken" type="hidden"
+                   value="CfDJ8BKC764mBGZOh6IN-pT7iyaFpYh8g78ubh8bBdXpnjQRJmAZkVY96pnjhJqffakBxej0cGGVm2XYyEXCPUMYn_iC3dEo3_MWnB57c0pJajLmWw_--1vYpYgxNVuG0ANZ-smBtTT70npISbokI4Pni-8GckSnoBcyaQfjGEV-Q8iUnlESY1NtpCHnwKhOsdoyKQ"/>
+        </form>
+    </div>
+    <div class="modal fade" id="ModalPopUp" role="dialog">
+        <div class="modal-dialog err-pop" style="">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+
+</main>
+
+
+<footer class="footer row m-0" style="background: #222222">
+    <div class="w-100 p-0 first-footer d-flex align-items-center">
+        <div class="container">
+            <div class="col-12 px-0 py-2 py-sm-0 d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <div class="col-lg-9 col-md-8 col-12 p-0 justify-content-center align-items-center">
+                    <nav class="nav col-12 p-0 d-flex justify-content-between flex-sm-row flex-column align-items-sm-center align-items-start">
+                        <div class=" p-0 justify-content-between d-none d-lg-flex d-md-none non-visible-mob"
+                             style="width: 120px; "><a
+                                style="height: 50px; width: 50px; border: 1px solid #B1B1B1; border-radius: 50%; text-decoration: none;"
+                                href="https://www.facebook.com/kabachokUA/"></a> <a
+                                style="height: 50px; width: 50px; border: 1px solid #B1B1B1; border-radius: 50%; text-decoration: none;"
+                                href="https://www.instagram.com/kabachok_ua/"></a>
+                        </div>
+                        <div class=" justify-content-between d-flex d-lg-none d-md-flex visible-mob align-items-center"
+                             style="width: 70px;"><a style="height: 20px; width: 20px; text-decoration: none;"
+                                                      href="https://www.facebook.com/kabachokUA/"></a> <a
+                                style="height: 20px; width: 20px; text-decoration: none;"
+                                href="https://www.instagram.com/kabachok_ua/"></a></div>
+                        <div class="col-md-7 col-lg-9 col-12 col-sm-8 flex-lg-row  px-0 py-2 py-sm-0 flex-column justify-content-between align-items-center d-sm-flex d-lg-flex d-md-flex flex-grow-1 mail-non-visible">
+                            <div class="col-12 col-lg-5 p-0" style="font-size: 16px; color: #ffffff">
+                                <img src="./img/phone-footer-pc.svg" alt="" style="margin-right: 6px">
+                                <a href="tel:0935774000" style="color: white">+38(093)5774000</a></div>
+                            <div class="col-12 col-lg-7 col-sm-12 p-0 " style="font-size: 16px; color: #ffffff">
+                                <img src="./img/mail-footer-pc.svg" alt="" style="margin-right: 6px">
+                                <a href="mailto:admin@kabachok.group" style="color: white">admin@kabachok.group</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-4 col-lg-3 col-12 p-0 justify-content-center" style="height: 24px">
+                    <nav class="nav justify-content-center justify-content-md-end"><a class="nav-link p-0 align-self-center" href="/Home/About"
+                                                            style="color: #36C233; font-size: 14px; line-height: 16px;">About
+                        Us</a>
+                        <div class="align-self-center px-3" style="color: #36C233">|</div>
+                        <a class="nav-link p-0 align-self-center" href="/Home/Privacy"
+                           style="color: #36C233; font-size: 14px; line-height: 16px;">Privacy</a>
+                        <div class="align-self-center px-3" style="color: #36C233">|</div>
+                        <a class="nav-link p-0 align-self-center" href="/Home/Privacy"
+                           style="color: #36C233; font-size: 14px; line-height: 16px;">Terms</a></nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-0 w-100 d-flex align-items-center second-footer" style="height: 38px;">
+        <div class="container container-sm container-md container-lg">
+            <div class="col-12 p-0 d-flex justify-content-center"
+                 style="color: #ffffff; font-size: 14px; line-height: 16px;">
+                <span>© 2020 &#x41A;&#x430;&#x431;&#x430;&#x447;&#x43E;&#x43A; &#x41F;&#x440;.&#x431;&#x435;&#x440;&#x435;&#x433;</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="./js/resources.js"></script>
+<script src="./js/changeAmount.js"></script>
+<!--<script src="./js/site.js?v=IKiduzxdPlirkJ5c-nOb06AWFoMpTQCQPjrAcsz3iP4"></script>-->
+<script src="/js/animation-bg-main-page.js"></script>
+<script>
+    $('#sources').each(function () {
+        let classes = $(this).attr("class"),
+            id = $(this).attr("id"),
+            name = $(this).attr("name");
+        let template = '<div class="' + classes + '">';
+        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function () {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+        });
+        template += '</div></div>';
+
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function () {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function () {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function () {
+        $('html').one('click', function () {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this).parents(".custom-select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function () {
+        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".custom-select").removeClass("opened");
+        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+
+    $('.delete-parent').click(function () {
+        $(this).closest('.parent-delete').remove();
+    });
+
+
+</script>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js" crossorigin="anonymous"
+        integrity="sha384-Fnqn3nxp3506LP/7Y3j/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe/G/k">
+</script>
+<script>(window.jQuery && window.jQuery.validator || document.write("\u003Cscript src=\u0022/lib/jquery-validation/dist/jquery.validate.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-Fnqn3nxp3506LP/7Y3j/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe/G/k\u0022\u003E\u003C/script\u003E"));</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"
+        crossorigin="anonymous" integrity="sha384-JrXK+k53HACyavUKOsL+NkmSesD2P+73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH">
+</script>
+<script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive || document.write("\u003Cscript src=\u0022/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-JrXK\u002Bk53HACyavUKOsL\u002BNkmSesD2P\u002B73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH\u0022\u003E\u003C/script\u003E"));</script>
+
+<script id="widget-wfp-script" language="javascript" type="text/javascript"
+        src="https://secure.wayforpay.com/server/pay-widget.js"></script>
+<script>
+    $(function () {
+        var userId = document.getElementById("id-value-id-user").value;
+        $(document).on("click", "#btnLink", function () {
+            $('#ModalPopUp').modal('show');
+            $(".modal-content").html(gethtmlloading());
+            var urlfin = '/Account/ChangePasswordModal?userId=' + userId;
+            $.get(urlfin, function (data) {
+                $(".modal-content").html(data);
+            });
+        });
+        $(document).on('click', '[data-save="modal"]', function (event) {
+            event.preventDefault();
+
+            var form = $(this).parent().parents().find('.modal-body').find('form');
+            var actionUrl = form.attr('action');
+            var dataToSend = form.serialize();
+
+            $.post(actionUrl, dataToSend).done(function (data, statusText, xhr) {
+                var isValid = false;
+
+                if (data && data.res && data.res == "OK")
+                    isValid = true;
+
+                if (isValid) {
+                    $('#modDialog').modal('hide');
+                    $('#dialogContent').empty();
+
+                    window.location.href = data.returnUrl;
+                } else {
+                    var newBody = $('.modal-body', data);
+                    $(document).find('.modal-body').replaceWith(newBody);
+                }
+            }).fail(function (xhr, status, error) {
+                var message = error + '\r\n';
+                if (xhr)
+                    message += xhr.responseText;
+                dialog_error(message);
+                // $('html').html(xhr.responseText);
+            });
+        });
+
+        $("#nav-content-fin").html(gethtmlloading());
+
+        $.get('/Account/UserFinance', function (data) {
+
+            $("#nav-content-fin").html(data);
+            var enable_liqpay = false;
+            enable_liqpay = true;
+
+            function to2(item, index, arr) {
+                arr[index] = item.toFixed(2);
+            }
+
+            $(document).on('click', '#addliqpay-btn', function (e) {
+                e.preventDefault();
+                $(this).html("Обробка...").css({
+                    "cursor": "wait",
+                    "pointer-events": "none"
+                });
+                if (enable_liqpay == true) {
+                    var amount = parseFloat($('#liqpay-amount').val());
+                    amount = amount.toFixed(2);
+                    var url = '/PaymentWayForPay/GetCheckOut?amount=' + amount;
+
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        dataType: 'json',
+                        success: function (res) {
+                            if (typeof res.error == 'undefined') {
+                                var wayforpay = new Wayforpay();
+                                res.productPrice.forEach(to2);
+                                res.amount = res.amount.toFixed(2);
+                                var pay = function () {
+                                    wayforpay.run({
+                                            merchantAccount: res.merchantAccount,
+                                            merchantDomainName: res.merchantDomainName,
+                                            merchantTransactionSecureType: res.merchantTransactionSecureType,
+                                            authorizationType: "SimpleSignature",
+                                            orderDate: res.orderDate,
+                                            merchantSignature: res.merchantSignature,
+                                            orderReference: res.orderReference,
+                                            amount: res.amount,
+                                            currency: res.currency,
+                                            productName: res.productName,
+                                            productPrice: res.productPrice,
+                                            productCount: res.productCount,
+                                            serviceUrl: res.serviceUrl,
+                                            returnUrl: res.returnUrl
+                                        }
+                                    );
+                                }
+                                console.log(res);
+                                pay();
+                                $("#addliqpay-btn").html("&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438; &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;").css({
+                                    "cursor": "",
+                                    "pointer-events": ""
+                                });
+                            } else {
+                                console.log(typeof res.error == 'undefined');
+                                dialog_error(res);
+                                $("#addliqpay-btn").html("&#x41F;&#x43E;&#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x442;&#x438; &#x420;&#x430;&#x445;&#x443;&#x43D;&#x43E;&#x43A;").css({
+                                    "cursor": "",
+                                    "pointer-events": ""
+                                });
+                            }
+
+                        }
+                    });
+                }
+            });
+
+        });
+
+        $.get('/Account/UserChilds?view=UserChildsData', function (data) {
+            var childcontainer = $('#child-container')
+            childcontainer.find('.child-data').remove();
+            childcontainer.append(data);
+            // $("#nextchilds").html(data);
+
+        });
+        $("#addchild").click(function (e) {
+            e.preventDefault();
+            var token = $("[name='__RequestVerificationToken'").val();
+            $.post('/Account/AddNewChild', {__RequestVerificationToken: token}).done(function (data, statusText, xhr) {
+                //alert(data);
+                var childcontainer = $('#child-container');
+                childcontainer.find('.child-data').remove();
+                childcontainer.append(data);
+            })
+                .fail(function (xhr, code, error) {
+                    dialog_error(error);
+                });
+        });
+
+        function isFileImage(file) {
+            const acceptedImageTypes = ['image/jpeg', 'image/png'];
+
+            return file && acceptedImageTypes.includes(file['type'])
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var target_img = $($(input).attr('data-target'));
+                if (!isFileImage(input.files[0])) {
+                    $(input).val('');
+                    return;
+                }
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(target_img).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).on("change", ".custom-file-input", function () {
+            readURL(this);
+        });
+
+        setup_listitems({href: '/Account', method: "UserFinance"});
+    });
+
+</script>
+
+
+</body>
+</html>
+
